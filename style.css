@@ -1,0 +1,1209 @@
+/* =====================================================
+   DARK // BIRTHDAY PROTOCOL
+   MAIN STYLE
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 40%,
+            #17102e 0%,
+            #090713 35%,
+            #030307 75%);
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =====================================================
+   STAR FIELD
+===================================================== */
+
+#stars {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+.star {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: 0.6;
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.15;
+
+        transform:
+            scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.5);
+    }
+}
+
+
+/* =====================================================
+   AURORA
+===================================================== */
+
+.aurora {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    z-index: 1;
+}
+
+
+.aurora-one {
+    top: -200px;
+    left: -150px;
+
+    background: #8b5cff;
+
+    animation:
+        auroraMoveOne 12s ease-in-out infinite alternate;
+}
+
+
+.aurora-two {
+    right: -180px;
+    bottom: -200px;
+
+    background: #00d9ff;
+
+    animation:
+        auroraMoveTwo 15s ease-in-out infinite alternate;
+}
+
+
+@keyframes auroraMoveOne {
+
+    from {
+        transform:
+            translate(0, 0) scale(1);
+    }
+
+    to {
+        transform:
+            translate(160px, 100px) scale(1.3);
+    }
+}
+
+
+@keyframes auroraMoveTwo {
+
+    from {
+        transform:
+            translate(0, 0) scale(1);
+    }
+
+    to {
+        transform:
+            translate(-150px, -100px) scale(1.25);
+    }
+}
+
+
+/* =====================================================
+   NOISE
+===================================================== */
+
+.noise {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    opacity: 0.025;
+
+    background-image:
+        repeating-radial-gradient(circle at 0 0,
+            transparent 0,
+            #fff 1px,
+            transparent 2px);
+
+    background-size: 4px 4px;
+}
+
+
+/* =====================================================
+   WELCOME SCREEN
+===================================================== */
+
+.welcome-screen {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+    position: absolute;
+
+    top: 35px;
+
+    padding: 11px 19px;
+
+    border:
+        1px solid rgba(139, 92, 255, 0.35);
+
+    border-radius: 50px;
+
+    background:
+        rgba(10, 7, 25, 0.5);
+
+    backdrop-filter:
+        blur(15px);
+
+    color: #aaa0c7;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    box-shadow:
+        0 0 25px rgba(139, 92, 255, 0.1);
+}
+
+
+.status-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: #00ffd5;
+
+    box-shadow:
+        0 0 8px #00ffd5,
+        0 0 18px #00ffd5;
+
+    animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+
+        transform:
+            scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.2);
+    }
+}
+
+
+/* =====================================================
+   CORE
+===================================================== */
+
+.core {
+    position: relative;
+
+    width: 270px;
+    height: 270px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+
+.core-glow {
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(139, 92, 255, 0.8),
+            rgba(0, 217, 255, 0.2),
+            transparent 70%);
+
+    filter: blur(22px);
+
+    animation:
+        coreGlow 3s ease-in-out infinite alternate;
+}
+
+
+@keyframes coreGlow {
+
+    from {
+        transform:
+            scale(0.8);
+
+        opacity: 0.5;
+    }
+
+    to {
+        transform:
+            scale(1.2);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   RINGS
+===================================================== */
+
+.ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(139, 92, 255, 0.5);
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 255, 0.2);
+}
+
+
+.ring-1 {
+    width: 190px;
+    height: 190px;
+
+    animation:
+        rotate 12s linear infinite;
+}
+
+
+.ring-2 {
+    width: 225px;
+    height: 225px;
+
+    border-color:
+        rgba(0, 217, 255, 0.35);
+
+    animation:
+        rotateReverse 18s linear infinite;
+}
+
+
+.ring-3 {
+    width: 260px;
+    height: 260px;
+
+    border-style: dashed;
+
+    border-color:
+        rgba(255, 209, 102, 0.2);
+
+    animation:
+        rotate 25s linear infinite;
+}
+
+
+@keyframes rotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes rotateReverse {
+
+    from {
+        transform:
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            rotate(0deg);
+    }
+}
+
+
+/* =====================================================
+   DARK LOGO
+===================================================== */
+
+.core-text {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    gap: 4px;
+
+    font-size: 50px;
+
+    font-weight: 900;
+
+    letter-spacing: 10px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #8b5cff,
+        0 0 30px #8b5cff,
+        0 0 60px #00d9ff;
+}
+
+
+.core-text span {
+    animation:
+        letterFloat 3s ease-in-out infinite;
+}
+
+
+.core-text span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+
+.core-text span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+.core-text span:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+
+@keyframes letterFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-9px);
+    }
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.subtitle {
+    color: #aaa4bd;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 15px rgba(139, 92, 255, 0.5);
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.neon-button,
+.message-button {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 16px 25px;
+
+    border:
+        1px solid rgba(139, 92, 255, 0.7);
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(139, 92, 255, 0.13),
+            rgba(0, 217, 255, 0.06));
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 0 25px rgba(139, 92, 255, 0.15),
+
+        inset 0 0 20px rgba(139, 92, 255, 0.05);
+
+    transition:
+        0.35s ease;
+}
+
+
+.neon-button b,
+.message-button b {
+    color: #00d9ff;
+
+    font-size: 18px;
+}
+
+
+.neon-button:hover,
+.message-button:hover {
+    transform:
+        translateY(-4px) scale(1.04);
+
+    border-color:
+        #00d9ff;
+
+    box-shadow:
+        0 0 30px rgba(0, 217, 255, 0.4),
+
+        0 0 70px rgba(139, 92, 255, 0.25);
+}
+
+
+/* =====================================================
+   BOTTOM CODE
+===================================================== */
+
+.bottom-code {
+    position: absolute;
+
+    bottom: 25px;
+
+    color: #4d485b;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    line-height: 1.8;
+
+    letter-spacing: 2px;
+}
+
+
+.bottom-code span {
+    color: #ff4f8b;
+
+    text-shadow:
+        0 0 8px #ff4f8b;
+}
+
+
+/* =====================================================
+   BIRTHDAY SCREEN
+===================================================== */
+
+.birthday-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 50;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(circle at 50% 40%,
+            rgba(139, 92, 255, 0.2),
+            transparent 35%),
+
+        radial-gradient(circle at 20% 80%,
+            rgba(0, 217, 255, 0.12),
+            transparent 30%),
+
+        #030307;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(1.08);
+
+    transition:
+        opacity 1s ease,
+        transform 1.2s ease,
+        visibility 1s;
+}
+
+
+.birthday-screen.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1);
+}
+
+
+/* =====================================================
+   BIRTHDAY CARD
+===================================================== */
+
+.birthday-card {
+    position: relative;
+
+    width: min(720px, 94%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(139, 92, 255, 0.4);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(139, 92, 255, 0.09),
+            rgba(0, 217, 255, 0.04));
+
+    backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+        0 0 50px rgba(139, 92, 255, 0.2),
+
+        inset 0 0 50px rgba(139, 92, 255, 0.04);
+
+    animation:
+        birthdayFloat 5s ease-in-out infinite;
+}
+
+
+.birthday-card::-webkit-scrollbar {
+    width: 3px;
+}
+
+
+.birthday-card::-webkit-scrollbar-thumb {
+    background: #8b5cff;
+}
+
+
+/* =====================================================
+   FILE STATUS
+===================================================== */
+
+.file-status {
+    color: #00d9ff;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 12px #00d9ff;
+}
+
+
+.online-dot {
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: #00ffd5;
+
+    box-shadow:
+        0 0 10px #00ffd5;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title-wrapper h1,
+.title-wrapper h2 {
+    margin: 0;
+
+    font-weight: 900;
+
+    line-height: 0.95;
+}
+
+
+.title-wrapper h1 {
+    font-size:
+        clamp(38px, 9vw, 80px);
+
+    letter-spacing: 8px;
+
+    background:
+        linear-gradient(90deg,
+            #8b5cff,
+            #00d9ff,
+            #ffd166,
+            #8b5cff);
+
+    background-size: 300%;
+
+    -webkit-background-clipF: text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+
+.title-wrapper h2 {
+    font-size:
+        clamp(30px, 7vw, 65px);
+
+    color: white;
+
+    letter-spacing: 10 px;
+
+    text-shadow:
+        0 0 15px #8b5cff,
+        0 0 40px #8b5cff;
+}
+
+
+@keyframes gradientMove {
+
+    0% {
+        background-position:
+            0%;
+    }
+
+    100% {
+        background-position:
+            300%;
+    }
+}
+
+
+/* =====================================================
+   DARK NAME
+===================================================== */
+
+.dark-name {
+    margin-top: 20px;
+
+    color: white;
+
+    font-size:
+        clamp(25px, 6vw, 48px);
+
+    font-weight: 900;
+
+    letter-spacing: 14px;
+
+    text-shadow:
+        0 0 10px #8b5cff,
+        0 0 30px #8b5cff,
+        0 0 60px #00d9ff;
+}
+
+
+/* =====================================================
+   GOLD LINE
+===================================================== */
+
+.gold-line {
+    width: 140px;
+
+    height: 1px;
+
+    margin: 25px auto;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #ffd166,
+            #8b5cff,
+            #00d9ff,
+            transparent);
+
+    box-shadow:
+        0 0 18px #8b5cff;
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.birthday-date {
+    margin-bottom: 25px;
+
+    color: #777184;
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =====================================================
+   MESSAGE BUTTON
+===================================================== */
+
+.message-button {
+    margin:
+        0 auto;
+
+    border-color:
+        rgba(255, 209, 102, 0.5);
+
+    box-shadow:
+        0 0 25px rgba(255, 209, 102, 0.1);
+}
+
+
+.message-button b {
+    color: #ffd166;
+}
+
+
+/* =====================================================
+   MESSAGE CONTAINER
+===================================================== */
+
+.message-container {
+    display: grid;
+
+    grid-template-rows:
+        0fr;
+
+    opacity: 0;
+
+    margin-top: 0;
+
+    transition:
+        grid-template-rows 1s ease,
+        opacity 0.8s ease,
+        margin-top 0.8s ease;
+}
+
+
+.message-container.open {
+    grid-template-rows:
+        1fr;
+
+    opacity: 1;
+
+    margin-top: 35px;
+}
+
+
+.message-inner {
+    overflow: hidden;
+
+    min-height: 0;
+
+    padding:
+        0 25px;
+
+    border-top:
+        1px solid rgba(139, 92, 255, 0.2);
+}
+
+
+/* =====================================================
+   MESSAGE SYMBOL
+===================================================== */
+
+.message-symbol {
+    margin-top: 25px;
+
+    color: #ffd166;
+
+    font-size: 22px;
+
+    text-shadow:
+        0 0 15px #ffd166;
+
+    animation:
+        symbolPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes symbolPulse {
+
+    0%,
+    100% {
+        transform:
+            scale(0.9);
+
+        opacity: 0.6;
+    }
+
+    50% {
+        transform:
+            scale(1.1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   MESSAGE TEXT
+===================================================== */
+
+.message-inner p {
+    margin-top: 25px;
+
+    color: #d4cfdf;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    letter-spacing: 0.2px;
+}
+
+
+.message-inner strong {
+    color: white;
+
+    font-size: 17px;
+
+    text-shadow:
+        0 0 15px #8b5cff;
+}
+
+
+/* =====================================================
+   SIGNATURE
+===================================================== */
+
+.signature {
+    margin-top: 30px;
+
+    padding-bottom: 15px;
+
+    color: #777184;
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   FINAL CODE
+===================================================== */
+
+.final-code {
+    position: absolute;
+
+    bottom: 18px;
+
+    color: #35313f;
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   FLOAT
+===================================================== */
+
+@keyframes birthdayFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* =====================================================
+   GLITCH
+===================================================== */
+
+body.glitch {
+    animation:
+        screenGlitch 0.8s steps(2);
+}
+
+
+@keyframes screenGlitch {
+
+    0% {
+        transform:
+            translate(0);
+
+        filter:
+            none;
+    }
+
+    20% {
+        transform:
+            translate(-8px, 3px);
+
+        filter:
+            hue-rotate(90deg);
+    }
+
+    40% {
+        transform:
+            translate(8px, -3px);
+
+        filter:
+            contrast(1.5);
+    }
+
+    60% {
+        transform:
+            translate(-4px, 0);
+
+        filter:
+            hue-rotate(-90deg);
+    }
+
+    80% {
+        transform:
+            translate(4px, 2px);
+
+        filter:
+            brightness(2);
+    }
+
+    100% {
+        transform:
+            translate(0);
+
+        filter:
+            none;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .status {
+        top: 22px;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .core {
+        width: 230px;
+        height: 230px;
+    }
+
+
+    .ring-1 {
+        width: 165px;
+        height: 165px;
+    }
+
+
+    .ring-2 {
+        width: 195px;
+        height: 195px;
+    }
+
+
+    .ring-3 {
+        width: 225px;
+        height: 225px;
+    }
+
+
+    .core-text {
+        font-size: 40px;
+    }
+
+
+    .subtitle {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .birthday-card {
+        padding:
+            35px 20px;
+    }
+
+
+    .message-inner {
+        padding:
+            0 5px;
+    }
+
+
+    .message-inner p {
+        font-size: 13px;
+
+        line-height: 1.9;
+    }
+
+
+    .final-code {
+        display: none;
+    }
+}
